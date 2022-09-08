@@ -1,0 +1,5 @@
+Banco de Dados Alura:
+
+- Chaves estrangeiras só podem ser apotadatas para propidades de outras tabelas que são unicas ou chaves primárias.
+
+- Estudar mais sobre sub consultas 
