@@ -36,3 +36,18 @@ create or replace function cria_a2(nome varchar) returns void as $$
 $$ language sql;
 
 select cria_a2('Gabriel Almeida');
+
+-- Reescrevendo as funções usando pl
+
+create function soma_dois_numeros_pl(numero_1 integer, numero_2 integer) returns integer as $$ 
+declare
+	resultado integer default 0;
+begin
+		resultado = numero_1 + numero_2;
+	
+	return resultado;
+	end;
+	
+$$ language plpgsql;
+
+select soma_dois_numeros_pl(1, 1);
