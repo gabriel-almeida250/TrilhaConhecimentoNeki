@@ -3,3 +3,9 @@ Banco de Dados Alura:
 - Chaves estrangeiras só podem ser apotadatas para propidades de outras tabelas que são unicas ou chaves primárias.
 
 - Estudar mais sobre sub consultas 
+
+- Sempre fazer um select antes de atualizar ou deletar uma informação ou a tabela inteira.
+
+- DDL = Create, Alter e Drop. 
+
+- DML = Insert, Update, Delete, Select
