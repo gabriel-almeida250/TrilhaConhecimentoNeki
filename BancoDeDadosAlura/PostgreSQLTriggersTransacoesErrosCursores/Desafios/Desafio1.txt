@@ -1,0 +1,1 @@
+Caso o instrutor inserido receba acima da média, cancele a instrução, ou seja, não permita que a inserção ocorra.
