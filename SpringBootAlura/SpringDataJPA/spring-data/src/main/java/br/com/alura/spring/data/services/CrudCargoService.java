@@ -9,6 +9,8 @@ import br.com.alura.spring.data.repositories.CargoRepository;
 
 @Service
 public class CrudCargoService {
+	
+	private Boolean system = true;
 
 	private final CargoRepository cargoRepository;
 	
@@ -17,11 +19,48 @@ public class CrudCargoService {
 	}
 	
 	public void inicial(Scanner scanner) {
-		salvar(scanner);
-	}
-	
-	public void atualizarCargo(Scanner scanner) {
-		atualizar(scanner);
+		
+		while(system) {
+			
+			System.out.println("Qual ação de cargo você quer executar?");
+			System.out.println("0 - Sair");
+			System.out.println("1 - Salvar cargo");
+			System.out.println("2 - Atualizar cargo");
+			System.out.println("3 - Deletar cargo");
+			System.out.println("4 - Mostrar todos os cargos");
+			
+			int action = scanner.nextInt();
+			
+			switch (action) {
+			case 1:
+				salvar(scanner);
+				break;
+			case 2:
+				atualizar(scanner);
+				break;
+			case 3:
+				deletar(scanner);
+				break;
+			case 4:
+				visualizar();
+				break;
+
+			default:
+				system = false;
+				break;
+			}
+//			if (action == 1) {
+//				salvar(scanner);
+//			} else if (action == 2){
+//				atualizarCargo(scanner);
+//			} else if (action == 3){
+//				mostrarTodos();
+//			} else if (action == 4){
+//				deletarCargo(scanner);
+//			} else {
+//				system = false;
+//			}
+		}
 	}
 	
 	private void salvar(Scanner scanner) {
@@ -34,13 +73,27 @@ public class CrudCargoService {
 	}
 
 	private void atualizar(Scanner scanner) {
-		System.out.println("Descrição e id do cargo:");
+		System.out.println("Id do cargo:");
 		Integer id = scanner.nextInt();
+		System.out.println("Descrição do cargo:");
 		String descricao = scanner.next();
+		
 		Cargo cargo = new Cargo();
 		cargo.setId(id);
 		cargo.setDescricao(descricao);
 		cargoRepository.save(cargo);
 		System.out.println("Atualizado!");
+	}
+	
+	private void visualizar() {
+		Iterable<Cargo> cargos = cargoRepository.findAll();
+		cargos.forEach(cargo -> System.out.println(cargo));
+	}
+	
+	private void deletar(Scanner scanner) {
+		System.out.println("Id do cargo:");
+		Integer id = scanner.nextInt();
+
+		cargoRepository.deleteById(id);
 	}
 }
