@@ -1,0 +1,14 @@
+mvn compile - Serve para compilar o projeto
+
+mvn clean - Serve só para limpar o diretório target, limpar os arquivos e deixar o terreno preparado, se você quisesse compilar
+
+mvn test - Executar os testes automatizados da aplicação
+
+mvn package - Serve empacotar a aplicação. Ele vai analisar no pom.xml 
+as configurações para ver se ele tem que gerar um JAR ou se tem que gerar um WAR. 
+Baseado nisso, ele faz a criação do pacote. Vamos executar no prompt o mvn package 
+e ver o que vai acontecer.
+
+mvn install -
+
+mvn deploy -
