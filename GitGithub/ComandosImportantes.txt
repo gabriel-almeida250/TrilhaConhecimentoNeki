@@ -1,0 +1,13 @@
+git rebase -i HEAD~3 - Serve para unificar os commits em um só, antes de enviar para o repositório remoto.
+
+git log --oneline - Ver todos os commits em uma linha.
+
+git cherry-pick - Seleciona apenas um commit para o merge.
+
+git bisect - Serve para encontrar determinado ponto na história do 
+código em que alguma alteração foi introduzida. 
+Fizemos isso, informando os estados do commit (se estava "bom" ou "ruim").
+
+git blame - Com o git blame, podemos ver quem é o responsável por cada linha no código.
+
+git log --graph - Melhora a visualização dos commits.
